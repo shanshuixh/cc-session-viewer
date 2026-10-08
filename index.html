@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Claude Code 会话浏览</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <div class="side-head">
+      <div class="brand"><span class="logo">✳</span><span>会话浏览</span></div>
+      <div class="side-actions">
+        <button class="icon-btn" id="btnPick" title="选择目录">📂</button>
+        <button class="icon-btn" id="btnRefresh" title="刷新">⟳</button>
+        <button class="icon-btn" id="btnTheme" title="切换主题">◐</button>
+      </div>
+    </div>
+    <div class="side-search">
+      <input id="filter" type="search" placeholder="筛选工程 / 会话标题…" autocomplete="off">
+      <button class="btn small" id="btnSearch" title="在全部会话中搜索内容">全文搜索</button>
+    </div>
+    <nav id="tree"><div class="empty-tip">尚未打开目录</div></nav>
+    <div class="side-foot" id="sideFoot"></div>
+  </aside>
+  <div id="backdrop"></div>
+  <main id="main">
+    <header class="topbar">
+      <button class="icon-btn" id="btnMenu" title="菜单">☰</button>
+      <div class="crumb" id="crumb">Claude Code 会话浏览</div>
+    </header>
+    <section id="view"></section>
+  </main>
+</div>
+<input type="file" id="dirInput" webkitdirectory directory multiple hidden>
+<div id="toast"></div>
+<script src="js/md.js"></script>
+<script src="js/fs.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
